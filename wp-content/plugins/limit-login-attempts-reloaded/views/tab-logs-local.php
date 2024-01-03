@@ -78,7 +78,7 @@ $black_list_usernames = ( is_array( $black_list_usernames ) && !empty( $black_li
         </tr>
         <tr>
             <th scope="row"
-                valign="top"><?php echo __( 'Blocklist', 'limit-login-attempts-reloaded' ); ?></th>
+                valign="top"><?php echo __( 'Denylist', 'limit-login-attempts-reloaded' ); ?></th>
             <td>
                 <div class="field-col">
                     <p class="description"><?php _e( 'One IP or IP range (1.2.3.4-5.6.7.8) per line', 'limit-login-attempts-reloaded' ); ?></p>
@@ -88,6 +88,10 @@ $black_list_usernames = ( is_array( $black_list_usernames ) && !empty( $black_li
                     <p class="description"><?php _e( 'One Username per line', 'limit-login-attempts-reloaded' ); ?></p>
                     <textarea name="lla_blacklist_usernames" rows="10" cols="50"><?php echo esc_textarea( $black_list_usernames ); ?></textarea>
                 </div>
+                <p class="description" style="font-weight: 600;"><?php echo sprintf(
+		                __( 'Automate your denylist with IP intelligence when you <a href="%s" target="_blank">upgrade to premium</a>.', 'limit-login-attempts-reloaded' ),
+                        'https://www.limitloginattempts.com/info.php?from=plugin-denylist'
+                    ); ?></p>
             </td>
         </tr>
     </table>
@@ -111,8 +115,8 @@ if( is_array( $log ) && ! empty( $log ) ) { ?>
         <p class="submit">
             <input class="button" name="submit" value="<?php echo __( 'Clear Log', 'limit-login-attempts-reloaded' ); ?>"
                    type="submit"/>
-            <span style="margin-left: 15px;"><?php echo sprintf(
-                    __( 'Receive enhanced logs and visual metrics when you <a href="%s" target="_blank">upgrade to our cloud app</a>', 'limit-login-attempts-reloaded' ),
+            <span style="margin-left: 15px; font-weight: 600;"><?php echo sprintf(
+                    __( '<a href="%s" target="_blank">Upgrade today</a> to optimize or unload your DB by moving logs to the cloud.', 'limit-login-attempts-reloaded' ),
                     'https://www.limitloginattempts.com/info.php?from=plugin-clear-log' );
             ?></span>
         </p>
@@ -127,20 +131,22 @@ if( is_array( $log ) && ! empty( $log ) ) { ?>
                 <th scope="col"><?php _e( 'Gateway', 'limit-login-attempts-reloaded' ); ?></th>
                 <th>
             </tr>
-
+            <?php
+            $date_format = get_option( 'date_format' ) . ' ' . get_option( 'time_format' );
+            ?>
 			<?php foreach ( $log as $date => $user_info ) : ?>
                 <tr>
-                    <td class="limit-login-date"><?php echo date_i18n( 'F d, Y H:i', $date ); ?></td>
+                    <td class="limit-login-date"><?php echo get_date_from_gmt( date( 'Y-m-d H:i:s', $date ), $date_format ); ?></td>
                     <td class="limit-login-ip">
 						<?php echo esc_html( $user_info['ip'] ); ?>
                     </td>
-                    <td class="limit-login-max"><?php echo esc_html( $user_info['username'] ) . ' (' . esc_html( $user_info['counter'] ) .' lockouts)'; ?></td>
+                    <td class="limit-login-max"><?php echo esc_html( $user_info['username'] ) . ' (' . esc_html( $user_info['counter'] ) . __( ' lockouts', 'limit-login-attempts-reloaded' ) . ')'; ?></td>
                     <td class="limit-login-gateway"><?php echo esc_html( $user_info['gateway'] ); ?></td>
                     <td>
 						<?php if ( !empty( $lockouts[ $user_info['ip'] ] ) && $lockouts[ $user_info['ip'] ] > time() ) : ?>
-                            <a href="#" class="button limit-login-unlock" data-ip="<?=esc_attr($user_info['ip'])?>" data-username="<?=esc_attr($user_info['username'])?>">Unlock</a>
+                            <a href="#" class="button limit-login-unlock" data-ip="<?=esc_attr($user_info['ip'])?>" data-username="<?=esc_attr($user_info['username'])?>"><?php esc_html_e( 'Unlock', 'limit-login-attempts-reloaded' ); ?></a>
 						<?php elseif ( $user_info['unlocked'] ): ?>
-                            Unlocked
+                            <?php esc_html_e( 'Unlocked', 'limit-login-attempts-reloaded' ); ?>
 						<?php endif ?>
                 </tr>
 			<?php endforeach; ?>
@@ -158,7 +164,7 @@ if( is_array( $log ) && ! empty( $log ) ) { ?>
 
                 $.post( ajaxurl, {
                     action: 'limit-login-unlock',
-                    sec: '<?=wp_create_nonce('limit-login-unlock') ?>',
+                    sec: '<?php echo wp_create_nonce( 'llar-unlock' ) ?>',
                     ip: btn.data('ip'),
                     username: btn.data('username')
                 } )

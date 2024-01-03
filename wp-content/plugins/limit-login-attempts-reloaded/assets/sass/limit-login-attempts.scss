@@ -26,6 +26,13 @@
       font-size: 14px;
       float: right;
       line-height: 2;
+
+      .llar-tooltip {
+        &:before {
+          right: 0;
+          left: auto;
+        }
+      }
     }
   }
 
@@ -384,6 +391,34 @@
     min-width: 243px;
   }
 
+  .llar-test-email-notification-btn {
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: 600;
+  }
+
+  .llar-test-email-notification-loader {
+    .llar-app-ajax-spinner {
+      float: none;
+      margin: -2px 5px 0;
+      display: none;
+    }
+
+    &.loading {
+      .llar-app-ajax-spinner {
+        display: inline-block;
+        visibility: visible;
+      }
+    }
+
+    .msg {
+      margin-left: 5px;
+      &.success {
+        color: #71c21b;
+      }
+    }
+  }
+
   .llar-protect-notice {
     font-size: 15px;
     color: #848484;
@@ -429,6 +464,14 @@
 
     &.active {
       display: table-row;
+    }
+  }
+}
+
+.llar-settings-wrap {
+  .form-table {
+    th {
+      width: 220px;
     }
   }
 }
@@ -773,30 +816,54 @@
 }
 
 .llar-tooltip {
-  text-decoration: underline;
-  text-decoration-style: dotted;
+  text-decoration: none;
   cursor: pointer;
   position: relative;
+  color: #aeaeae;
+
+  span {
+    vertical-align: middle;
+  }
 
   &:before {
     content: attr(data-text);
     position: absolute;
-    width: 200px;
-    padding: 5px;
-    background-color: rgba(#000, 0.8);
-    color: #fff;
+    width: max-content;
+    max-width: 300px;
+    padding: 10px;
+    background-color: #fff;
+    color: #575757;
+    border-radius: 7px;
+    box-shadow: 0 0 15px 6px rgba(#000, 0.1);
     font-size: 13px;
-    top: 100%;
+    top: calc(100% + 5px);
+    left: -5px;
     z-index: 999;
     visibility: hidden;
     opacity: 0;
     transition: all .2s;
-    font-weight: 300;
+    font-weight: 400;
     cursor: auto;
+    font-style: normal;
+  }
+
+  &:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    display: block;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 5px;
+    transform: rotate(45deg);
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
   }
 
   &:hover {
-    &:before {
+    &:before, &:after {
       visibility: visible;
       opacity: 1;
     }
@@ -816,28 +883,55 @@
 //    }
 //  }
 //}
+
+#wp-admin-bar-llar-root {
+  #wp-admin-bar-llar-root-premium {
+    a {
+      color: orange;
+    }
+  }
+}
+
 #toplevel_page_limit-login-attempts {
   .wp-menu-image.svg {
     background-size: 25px auto !important;
     margin-top: 7px;
   }
+
+  .llar-submenu-premium-item {
+    a {
+      color: orange;
+    }
+  }
 }
 
-.llar-alert-icon-animation {
-  animation-duration: 10s;
-  animation-timing-function: ease-out;
-  animation-delay: 3s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-  animation-fill-mode: both;
-  animation-play-state: running;
-  animation-name: shake;
+#menu-settings,
+#wpadminbar {
+  li {
+    position: relative;
+    .llar-alert-icon {
+      .plugin-count {
+        background-color: #d63638;
+        color: #fff;
+        display: inline-block;
+        vertical-align: top;
+        box-sizing: border-box;
+        margin: 1px 0 -1px 2px;
+        padding: 0 5px;
+        min-width: 18px;
+        height: 18px;
+        border-radius: 9px;
+        font-size: 11px;
+        line-height: 1.6;
+        text-align: center;
+      }
+    }
+  }
 }
 
 #menu-settings {
   li {
-    position: relative;
-    .llar-alert-icon-animation {
+    .llar-alert-icon {
       position: absolute;
       right: 5px;
       top: 7px;
@@ -848,26 +942,63 @@
   }
 }
 
-@keyframes shake {
-  1%, 9% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  2%, 8% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  3%, 5%, 7% {
-    transform: translate3d(-3px, 0, 0);
-  }
-
-  4%, 6% {
-    transform: translate3d(3px, 0, 0);
+#wpadminbar {
+  li {
+    .llar-alert-icon {
+      .plugin-count {
+        vertical-align: middle;
+        margin-top: -3px;
+      }
+    }
   }
 }
 
 .llar-auto-update-notice {
   display: block !important;
+}
+
+.llar-attempts-chart-legend {
+  > div {
+    margin-right: 10px;
+    color: #60666d;
+    display: inline-block;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 37px;
+      height: 9px;
+      border: 3px solid;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    &.legend-1 {
+      &:before {
+        border-color: rgba(54, 162, 235, 1);
+        background-color: rgba(54, 162, 235, 0.3)
+      }
+    }
+
+    &.legend-2 {
+      &:before {
+        border-color: rgba(174, 174, 174, 0.7);
+        background-color: rgba(174, 174, 174, 0.2)
+      }
+
+      .llar-tooltip {
+        &:before {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+
+  }
 }
 
 @import "dashboard-page";

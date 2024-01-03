@@ -15,6 +15,11 @@ class CloudApp {
 	private $id = null;
 
 	/**
+	 * @var null|string
+	 */
+	private $api = null;
+
+	/**
 	 * @var array
 	 */
 	private $config = array();
@@ -28,6 +33,11 @@ class CloudApp {
 	 * @var null
 	 */
 	public $last_response_code = null;
+
+	/**
+	 * @var array
+	 */
+	private $stats_cache = array();
 
 	/**
 	 * App constructor.
@@ -129,7 +139,10 @@ class CloudApp {
 	 */
 	public function stats() {
 
-		return $this->request( 'stats', 'get' );
+		if( empty( $this->stats_cache ) )
+			$this->stats_cache = $this->request( 'stats' );
+
+		return $this->stats_cache;
 	}
 
 	/**

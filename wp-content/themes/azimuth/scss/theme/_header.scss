@@ -1,0 +1,132 @@
+//////////////////////////////////////////////////////////
+////  Header | Variables
+//////////////////////////////////////////////////////////
+
+:root {
+  --theme-hamburger-height: 10px;
+  --theme-hamburger-width: 28px;
+  --theme-hamubrger-stroke: 2px;
+}
+
+//////////////////////////////////////////////////////////
+////  Header | Styles
+//////////////////////////////////////////////////////////
+
+.header {
+
+  padding: 30px 0 15px;
+  position: relative;
+  z-index: 50;
+
+  .hamburger {
+    width: var(--theme-hamburger-width);
+    height: var(--theme-hamburger-height);
+    background: transparent;
+    min-height: unset;
+    transition: opacity 150ms;
+    position: relative;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &__inner {
+      transition: transform 150ms, opacity 150ms;
+      width: var(--theme-hamburger-width);
+      height: var(--theme-hamubrger-stroke);
+      background-color: rgba(var(--theme-colour-powder),1);
+      border-radius: 0;
+      &.bottom,
+      &.top {
+        position: absolute;
+        right: 0;
+      }
+      &.bottom {
+        bottom: 0;
+      }
+      &.middle {
+        opacity: 0;
+      }
+      &.top {
+        top: 0;
+      }
+    }
+  }
+
+  &__navigation {
+    display: none;
+  }
+
+  &__brand {
+    height: 48px;
+    a, svg {
+      display: block;
+      width: auto;
+      height: 100%;
+    }
+    a {
+      transition: opacity 150ms;
+      opacity: 1;
+      &:hover {
+        opacity: 0.3333;
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-menu--active & {
+    .hamburger {
+      &__inner {
+        &.middle {
+          transform: rotate(45deg);
+          opacity: 1;
+        }
+        &.bottom {
+          bottom: calc((var(--theme-hamburger-height) - var(--theme-hamburger-stroke)) * 0.5);
+          transform: rotate(-45deg);
+        }
+        &.top {
+          opacity: 0;
+        }
+      }
+    }
+    .header__brand a {
+      // opacity: 0;
+    }
+  }
+
+  @include breakpoint(lg) {
+
+    &__navigation {
+      display: inline-flex;
+      width: auto;
+      gap: 40px;
+      &-link {
+        color: rgba(var(--theme-colour-powder), 1);
+        font-family: var(--theme-font-family--sans-serif--primary);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1;
+        text-align: center;
+        text-transform: capitalize;
+        &.active,
+        &:focus,
+        &:hover {
+          color: rgba(var(--theme-colour-sky), 1);
+        }
+      }
+    }
+
+  }
+
+}

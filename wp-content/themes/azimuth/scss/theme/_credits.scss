@@ -1,0 +1,12 @@
+/*!
+	Theme Name: #{ map-get($theme-info, "theme-name") }
+	Theme URI: #{ map-get($theme-info, "theme-uri") }
+	Description: #{ map-get($theme-info, "description") }
+	Author: #{ map-get($theme-info, "author") }
+	Author URI: #{ map-get($theme-info, "author-uri") }
+	Version: #{ map-get($theme-info, "version") }
+	License: #{ map-get($theme-info, "license") }
+	License URI: #{ map-get($theme-info, "license-uri") }
+	Tags: #{ map-get($theme-info, "tags") }
+	Text Domain: #{ map-get($theme-info, "text-domain") }
+*/

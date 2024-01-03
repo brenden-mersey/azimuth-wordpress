@@ -1,0 +1,96 @@
+.instagram-feed {
+
+  &__heading {
+    color: rgba(var(--theme-colour-navy),1);
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+    a {
+      transition:
+        color var(--theme-transition-duration),
+        opacity var(--theme-transition-duration);
+      color: inherit;
+      text-decoration: none;
+      border: none;
+      outline: none;
+      &:focus,
+      &:hover {
+        color: rgba(var(--theme-colour-sky),1);
+      }
+    }
+    & + .instagram-feed__main {
+      margin-top: var(--bs-gutter-width);
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__link {
+    background: rgba(var(--theme-colour-navy), 0.666);
+    transition: opacity var(--theme-transition-duration);
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    aspect-ratio: 1/1;
+    &.lazyloaded {
+      background: rgba(var(--theme-colour-white), 1);
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  @include breakpoint(sm) {
+
+    &__heading {
+      padding: 0;
+      max-width: var(--bs-container-width--sm);
+    }
+
+  }
+
+  @include breakpoint(md) {
+
+    &__heading {
+      max-width: var(--bs-container-width--md);
+    }
+
+  }
+
+  @include breakpoint(lg) {
+
+    &__heading {
+      max-width: var(--bs-container-width--lg);
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+    &__heading {
+      max-width: var(--bs-container-width--xl);
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__heading {
+      max-width: var(--bs-container-width--xxl);
+    }
+
+  }
+
+}

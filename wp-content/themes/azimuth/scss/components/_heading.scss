@@ -1,0 +1,88 @@
+//////////////////////////////////////////////////////////
+////  Heading | Vars
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Heading | Styles
+//////////////////////////////////////////////////////////
+
+.heading {
+
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+
+  &--alternative {
+    @extend .heading;
+    font-family: var(--theme-font-family--sans-serif--primary);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: 0.07em;
+  }
+
+  &--1 {
+    @extend .heading;
+    font-family: var(--theme-font-family--serif--primary);
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 1.03;
+    letter-spacing: -0.03em;
+  }
+
+  &--2 {
+    @extend .heading;
+    font-family: var(--theme-font-family--serif--primary);
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    font-weight: 400;
+  }
+
+  @include breakpoint(sm) {} // min width sm
+
+  @include breakpoint(md) {
+
+    &--1 {
+      font-size: 50px;
+    }
+
+  } // min width md
+
+  @include breakpoint(lg) {
+
+    &--1 {
+      font-size: 60px;
+    }
+
+    &--2 {
+      font-size: 38px;
+    }
+
+  } // min width lg
+
+  @include breakpoint(xl) {
+
+    &--1 {
+      font-size: 70px;
+    }
+
+    &--2 {
+      font-size: 40px;
+    }
+
+  } // min width xl
+
+  @include breakpoint(xxl) {
+
+    &--1 {
+      font-size: 80px;
+    }
+
+    &--2 {
+      font-size: 42px;
+    }
+
+  } // min width xxl
+
+} // .heading

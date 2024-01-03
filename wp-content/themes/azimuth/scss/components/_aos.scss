@@ -1,0 +1,25 @@
+//////////////////////////////////////////////////////////
+////  Animations | Vars
+//////////////////////////////////////////////////////////
+
+$travel: 8px;
+
+//////////////////////////////////////////////////////////
+////  Animations | Styles
+//////////////////////////////////////////////////////////
+
+[data-aos=fade-right] {
+  transform: translate3d( -$travel, 0, 0 );
+}
+
+[data-aos=fade-left] {
+  transform: translate3d( $travel, 0, 0 );
+}
+
+[data-aos=fade-up] {
+  transform: translate3d( 0, $travel * 1.5, 0 );
+}
+
+[data-aos=fade-down] {
+  transform: translate3d( 0, -$travel * 1.5, 0 );
+}

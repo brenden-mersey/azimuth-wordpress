@@ -1,0 +1,159 @@
+.community {
+
+  color: rgba(var(--theme-colour-powder),1);
+
+  .organization {
+    .link {
+      border: none;
+    }
+  }
+
+  &__banner,
+  &__content,
+  &__main {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__heading,
+  &__subheading {
+    color: rgba(var(--theme-colour-sky),1);
+    margin-bottom: 38px;
+  }
+
+  &__background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__banner {
+    height: 280px;
+
+    &-image,
+    &-strokes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &-image {
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-strokes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+
+  &__content {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__message {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.43;
+    text-transform: uppercase;
+  }
+
+  &__organizations {
+    padding-top: 60px;
+  }
+
+  @include breakpoint(sm) {
+
+    &__content {
+      padding: 0;
+      max-width: 540px;
+    }
+
+  }
+
+  @include breakpoint(md) {
+
+    &__content {
+      max-width: 740px;
+    }
+
+  }
+
+  @include breakpoint(lg) {
+
+    .organization {
+      padding-right: var(--bs-gutter-width);
+    }
+
+    &__heading,
+    &__message,
+    &__subheading {
+      width: 50%;
+    }
+
+    &__content {
+      max-width: 960px;
+    }
+
+    &__heading,
+    &__subheading {
+      margin-bottom: 54px;
+    }
+
+    &__main {
+      .strokes__vr {
+        background: rgba(var(--theme-colour-navy), 1);
+      }
+    }
+
+    &__organizations {
+      padding-top: 85px;
+      &-grid {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+    &__content {
+      max-width: 1160px;
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__content {
+      max-width: 1360px;
+    }
+
+  }
+
+}

@@ -1,0 +1,68 @@
+//////////////////////////////////////////////////////////
+////  Error 404 | Vars
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Error 404 | Styles
+//////////////////////////////////////////////////////////
+
+.error-404 {
+
+  height: calc( 100vh - var(--theme-header-height--total));
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__heading,
+  &__message {
+    & + .error-404__cta {
+      margin-top: 45px;
+    }
+  }
+
+  &__cta {
+    a {
+      background: rgba(var(--theme-colour-powder),1);
+      color: rgba(var(--theme-colour-midnight),1);
+      width: 100%;
+      margin: auto;
+      max-width: 320px;
+      &:focus,
+      &:hover {
+        background: rgba(var(--theme-colour-midnight),1);
+        color: rgba(var(--theme-colour-powder),1);
+      }
+    }
+  }
+
+  &__heading {
+    & + .error-404__message {
+      margin-top: 10px;
+    }
+  }
+
+  &__main {
+    text-align: center;
+  }
+
+  @include breakpoint(sm) {} // min width sm
+
+  @include breakpoint(md) {} // min width md
+
+  @include breakpoint(lg) {
+
+    &__cta {
+      a {
+        width: 100%;
+        max-width: none;
+      }
+    }
+
+  } // min width lg
+
+  @include breakpoint(xl) {} // min width xl
+
+  @include breakpoint(xxl) {} // min width xxl
+
+} // .error-404

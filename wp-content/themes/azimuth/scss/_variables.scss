@@ -1,0 +1,137 @@
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+
+//////////////////////////////////////////////////////////
+////  SCSS | Functions & Mixins
+//////////////////////////////////////////////////////////
+
+@function hexToRGB( $hex: false ) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+//////////////////////////////////////////////////////////
+////  SCSS | Vars
+//////////////////////////////////////////////////////////
+
+$theme-info: (
+  'theme-name': 'Azimuth',
+  'theme-uri': 'https://weareverypolite.com',
+  'description': 'Azimuth Custom WordPress Theme',
+  'author': 'Very Polite Digital Dept.',
+  'author-uri': 'https://weareverypolite.com',
+  'version': '1.0.0',
+  'license': 'GNU General Public License v2 or later',
+  'license-uri': 'URI: https://www.gnu.org/licenses/gpl-2.0.html',
+  'tags': 'HTML5, CSS3, Responsive, Mobile Friendly',
+  'text-domain': 'azimuth',
+);
+
+// ---------------------------------------- Typography | Body Copy
+$theme-body-copy-sizes: (
+  'base': 14px,
+  'sm': 14px,
+  'md': 16px,
+  'lg': 14px,
+  'xl': 14px,
+  'xxl': 16px
+);
+
+// ---------------------------------------- Border Radius
+$theme-border: (
+  'radius': 4px,
+  'width': 2px,
+);
+
+// ---------------------------------------- Button | Font Size
+$theme-button-font-sizes: (
+  'base': 13px,
+  'sm': 14px,
+  'md': 15px,
+  'lg': 13px,
+  'xl': 14px,
+  'xxl': 15px
+);
+
+// ---------------------------------------- Button | Height
+$theme-button-min-heights: (
+  'base': 45px,
+  'sm': 45px,
+  'md': 45px,
+  'lg': 45px,
+  'xl': 45px,
+  'xxl': 45px
+);
+
+// ---------------------------------------- Button | Height
+$theme-button-min-widths: (
+  'base': 136px,
+  'sm': 136px,
+  'md': 136px,
+  'lg': 116px,
+  'xl': 120px,
+  'xxl': 124px
+);
+
+// ---------------------------------------- Colours
+$theme-colours: (
+  'black': #000000,
+  'midnight': #031626,
+  'navy': #072845,
+  'powder': #F5F3F9,
+  'sky': #88BFDD,
+  'white': #ffffff,
+  'yellow': #f6ae00,
+);
+
+// ---------------------------------------- Font Sizes | Body Copy
+$theme-font-sizes-body-copy: (
+  'base': 15px,
+  'sm': 16px,
+  'md': 17px,
+  'lg': 16px,
+  'xl': 17px,
+  'xxl': 18px
+);
+
+// ---------------------------------------- Font Sizes | Heading
+$theme-font-sizes-heading: (
+  'base': 32px,
+  'sm': 42px,
+  'md': 52px,
+  'lg': 32px,
+  'xl': 42px,
+  'xxl': 52px
+);
+
+// ---------------------------------------- Header Height
+$theme-header-heights: (
+  'base': 100px,
+  'sm': 110px,
+  'md': 120px,
+  'lg': 90px,
+  'xl': 100px,
+  'xxl': 110px
+);
+
+// ---------------------------------------- Bootstrap | Gutter
+$grid-gutter-width: 20px;
+
+// ---------------------------------------- Bootstrap | Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// ---------------------------------------- Bootstrap | Container Sizes
+$container-max-widths: (
+  sm: 540px,
+  md: 740px,
+  lg: 960px,
+  xl: 1160px,
+  xxl: 1360px
+);

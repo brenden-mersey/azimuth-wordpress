@@ -1,0 +1,119 @@
+//////////////////////////////////////////////////////////
+////  Button | Vars
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Button | Styles
+//////////////////////////////////////////////////////////
+
+.button {
+
+ transition:
+    background var(--theme-transition-duration),
+    border var(--theme-transition-duration),
+    color var(--theme-transition-duration),
+    height var(--theme-transition-duration),
+    opacity var(--theme-transition-duration);
+  border-width: var(--theme-border-width);
+  border-style: solid;
+  border-color: transparent;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  outline: none;
+  border-radius: 0;
+  background: transparent;
+  letter-spacing: 1;
+  line-height: 1;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  svg {
+    fill: currentColor;
+  }
+
+  &--primary,
+  &--secondary  {
+    @extend .button;
+    font-family: var(--theme-font-family--space-grotesk);
+    min-height: var(--theme-button-min-height);
+    padding: 0 var(--bs-gutter-width);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+  }
+
+  &--primary {
+    background: rgba(var(--theme-colour-navy),1);
+    color: rgba(var(--theme-colour-powder),1);
+    &:active,
+    &:focus,
+    &:hover {
+      background: rgba(var(--theme-colour-navy),0.6);
+      color: rgba(var(--theme-colour-powder),1);
+    }
+  }
+
+  &--secondary {
+    border-color: rgba(var(--theme-colour-navy),1);
+    color: rgba(var(--theme-colour-navy),1);
+    &:active,
+    &:focus,
+    &:hover {
+      border-color: rgba(var(--theme-colour-navy),1);
+      color: rgba(var(--theme-colour-navy),1);
+      opacity: 0.3333;
+    }
+  }
+
+  @include breakpoint(sm) {
+
+    &--primary,
+    &--secondary {
+      min-height: var(--theme-button-min-height--sm);
+    }
+
+  } // min width sm
+
+  @include breakpoint(md) {
+
+    &--primary,
+    &--secondary {
+      min-height: var(--theme-button-min-height--md);
+    }
+
+  } // min width md
+
+  @include breakpoint(lg) {
+
+    &--primary,
+    &--secondary {
+      min-height: var(--theme-button-min-height--lg);
+    }
+
+  } // min width lg
+
+  @include breakpoint(xl) {
+
+    &--primary,
+    &--secondary {
+      min-height: var(--theme-button-min-height--xl);
+    }
+
+  } // min width xl
+
+  @include breakpoint(xxl) {
+
+    &--primary,
+    &--secondary {
+      min-height: var(--theme-button-min-height--xxl);
+    }
+
+  } // min width xxl
+
+} // .button

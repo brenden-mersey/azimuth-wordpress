@@ -1,0 +1,43 @@
+.glide {
+
+  position: relative;
+  min-width: 0; // fix for when glide is child of display: grid
+  max-width: 100%;
+
+  &__bullet {
+    transition: background var(--theme-transition-duration);
+    background: rgba(var(--theme-colour-powder), 0.15);
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    &:focus,
+    &:hover,
+    &--active {
+      background: rgba(var(--theme-colour-powder), 1);
+    }
+    & + .glide__bullet {
+      margin-left: var(--bs-gutter-width);
+    }
+  }
+
+  &__bullets {
+    padding-top: calc( 2 * var(--bs-gutter-width));
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+  }
+
+  &__slides {
+    touch-action: auto;
+  }
+
+  &__track {
+    transition: height var(--theme-transition-duration);
+  }
+
+}

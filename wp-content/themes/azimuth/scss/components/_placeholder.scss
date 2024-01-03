@@ -1,0 +1,55 @@
+//////////////////////////////////////////////////////////
+////  Placeholder | Vars
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Placeholder | Styles
+//////////////////////////////////////////////////////////
+
+.placeholder {
+
+  width: 100%;
+  display: block;
+  background: transparent;
+  min-height: unset;
+  vertical-align: unset;
+  cursor: default;
+  opacity: 1;
+
+  &__grid {
+
+    [class^="col"] {
+      span {
+        display: flex;
+        height: 50px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background: rgba( var(--theme-colour-black), 0.33 );
+        color: #fff;
+      }
+    }
+
+    .row--inner {
+      & + .row--inner {
+        margin-top: 20px;
+      }
+    }
+
+  }
+
+  & + .placeholder {
+    margin-top: 40px;
+  }
+
+  @include breakpoint(sm) {} // min width sm
+
+  @include breakpoint(md) {} // min width md
+
+  @include breakpoint(lg) {} // min width lg
+
+  @include breakpoint(xl) {} // min width xl
+
+  @include breakpoint(xxl) {} // min width xxl
+
+} // .placeholder

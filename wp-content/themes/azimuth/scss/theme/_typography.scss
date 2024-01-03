@@ -1,0 +1,29 @@
+//////////////////////////////////////////////////////////
+////  Typography | Components
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Typography | Styles
+//////////////////////////////////////////////////////////
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0px;
+	padding: 0px;
+  font-weight: inherit;
+}
+
+// ---------------------------------------- Text Case
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+// ---------------------------------------- Font Weight
+@for $i from 1 through 9 {
+  .font-weight--#{$i}00 {
+    font-weight: $i * 100;
+  }
+}

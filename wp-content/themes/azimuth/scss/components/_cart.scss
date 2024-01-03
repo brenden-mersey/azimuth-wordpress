@@ -1,0 +1,45 @@
+//////////////////////////////////////////////////////////
+////  Cart | Vars
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Cart | Styles
+//////////////////////////////////////////////////////////
+
+.cart {
+
+  display: grid;
+  grid-gap: var(--bs-gutter-width);
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: row;
+  margin: 60px 0;
+  border: 1px solid black;
+
+  &__item {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+    &-content {
+      width: calc( (1/3 * 100%) - (var(--bs-gutter-width) * 0.5) );
+    }
+    &-image {
+      width: calc( (2/3 * 100%) - (var(--bs-gutter-width) * 0.5) );
+    }
+    &-title {
+      font-size: 16px;
+    }
+  }
+
+  @include breakpoint(sm) {} // min width sm
+
+  @include breakpoint(md) {} // min width md
+
+  @include breakpoint(lg) {} // min width lg
+
+  @include breakpoint(xl) {} // min width xl
+
+  @include breakpoint(xxl) {} // min width xxl
+
+} // .cart

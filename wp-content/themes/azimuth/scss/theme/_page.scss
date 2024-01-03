@@ -1,0 +1,52 @@
+//////////////////////////////////////////////////////////
+////  Page | Variables
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Page | Styles
+//////////////////////////////////////////////////////////
+
+.page {
+
+  .default-page {
+    padding-top: var(--bs-gutter-width);
+    padding-bottom: 45px;
+  }
+
+  &-background {
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+  }
+
+  @include breakpoint(sm) {} // min width sm
+
+  @include breakpoint(md) {} // min width md
+
+  @include breakpoint(lg) {
+
+    .default-page {
+      padding-bottom: 65px;
+    }
+
+  } // min width lg
+
+  @include breakpoint(xl) {
+
+    .default-page {
+      padding-bottom: 75px;
+    }
+
+  } // min width xl
+
+  @include breakpoint(xxl) {
+
+    .default-page {
+      padding-bottom: 85px;
+    }
+
+  } // min width xxl
+
+} // .page

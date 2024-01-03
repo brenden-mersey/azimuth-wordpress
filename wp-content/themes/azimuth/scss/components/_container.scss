@@ -1,0 +1,44 @@
+//////////////////////////////////////////////////////////
+////  Container | Vars
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Container | Styles
+//////////////////////////////////////////////////////////
+
+.container {
+
+  width: calc( 100% - 22px );
+
+  &-fluid,
+  &-xxl,
+  &-xl,
+  &-lg,
+  &-md,
+  &-sm {
+    width: calc( 100% - 22px );
+  }
+
+  @include breakpoint(sm) {
+
+    width: 100%;
+
+    &-xxl,
+    &-xl,
+    &-lg,
+    &-md,
+    &-sm {
+      width: 100%;
+    }
+
+  } // min width sm
+
+  @include breakpoint(md) {} // min width md
+
+  @include breakpoint(lg) {} // min width lg
+
+  @include breakpoint(xl) {} // min width xl
+
+  @include breakpoint(xxl) {} // min width xxl
+
+}

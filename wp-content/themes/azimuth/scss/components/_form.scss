@@ -1,0 +1,122 @@
+.form {
+
+  @keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  position: relative;
+  overflow: hidden;
+  font-size: 12px;
+
+  &__fields,
+  &__main {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    gap: 28px;
+  }
+
+  &__button {
+    &-submit {
+      background: rgba(var(--theme-colour-navy), 1);
+      color: rgba(var(--theme-colour-powder), 1);
+      width: 100%;
+      height: 45px;
+      &:hover {
+        background: rgba(var(--theme-colour-sky), 1);
+      }
+    }
+  }
+
+  &__field {
+    transition: margin var(--theme-transition-duration);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    flex-flow: column;
+    position: relative;
+    &.rude {
+      display: none;
+    }
+    &.error {
+      margin-bottom: 18px;
+    }
+    &-error-message {
+      transition:
+        opacity var(--theme-transition-duration),
+        transform var(--theme-transition-duration);
+      font-family: var(--theme-font-family--space-grotesk);
+      color: rgba(var(--theme-colour-sky), 1);
+      opacity: 0;
+      transform: translate3d( -10px, 0, 0 );
+      position: absolute;
+      top: 100%;
+      right: 0;
+      padding: 5px 0;
+      font-size: 12px;
+      .error & {
+        opacity: 1;
+        transform: translate3d( 0, 0, 0 );
+      }
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  &__loading {
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__main {
+    transition: opacity var(--theme-transition-duration);
+    opacity: 1;
+    position: relative;
+  }
+
+  &__spinner {
+    border: 2px solid rgba(var(--theme-colour-powder), 0.5);
+    border-left-color: rgba(var(--theme-colour-powder), 1);
+    width: 65px;
+    height: 65px;
+    border-radius: 100%;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.85;
+  }
+
+  .form-posting & {
+
+    .form__main {
+      opacity: 0.15;
+    }
+
+    .form__loading {
+      z-index: 10;
+      display: flex;
+    }
+
+    .form__spinner {
+      animation: loading 1.0s infinite linear;
+    }
+
+  }
+
+}

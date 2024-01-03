@@ -1,0 +1,63 @@
+//////////////////////////////////////////////////////////
+////  Instagram Feed | Vars
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Instagram Feed | Styles
+//////////////////////////////////////////////////////////
+
+.instagram-feed {
+
+  background: rgba(var(--theme-colour-powder),1);
+  padding: var(--bs-gutter-width) 0;
+
+  &__heading {
+    color: rgba(var(--theme-colour-navy),1);
+    a {
+      transition:
+        color var(--theme-transition-duration),
+        opacity var(--theme-transition-duration);
+      color: inherit;
+      text-decoration: none;
+      border: none;
+      outline: none;
+      &:focus,
+      &:hover {
+        color: rgba(var(--theme-colour-sky),1);
+      }
+    }
+  }
+
+  &__link {
+    transition: opacity var(--theme-transition-duration);
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    &:focus,
+    &:hover {
+      opacity: 0.3333;
+    }
+  }
+
+  &__main {
+    padding-top: var(--bs-gutter-width);
+  }
+
+  @include breakpoint(sm) {} // min width sm
+
+  @include breakpoint(md) {} // min width md
+
+  @include breakpoint(lg) {} // min width lg
+
+  @include breakpoint(xl) {} // min width xl
+
+  @include breakpoint(xxl) {} // min width xxl
+
+} // .instagram-feed

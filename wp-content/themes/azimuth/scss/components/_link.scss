@@ -1,0 +1,17 @@
+.link {
+
+  transition:
+    background var(--theme-transition-duration),
+    border var(--theme-transition-duration),
+    color var(--theme-transition-duration),
+    opacity var(--theme-transition-duration);
+  text-decoration: none;
+  outline: none;
+  border: none;
+  color: inherit;
+
+  svg {
+    fill: currentColor;
+  }
+
+}

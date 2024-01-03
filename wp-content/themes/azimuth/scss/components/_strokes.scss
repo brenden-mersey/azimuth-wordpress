@@ -1,0 +1,90 @@
+.strokes {
+
+  &__hr,
+  &__vr,
+  &__vr-angled-left,
+  &__vr-angled-right {
+    background: rgba(var(--theme-colour-powder), 1);
+    display: block;
+    position: absolute;
+  }
+
+  &__hr {
+    width: 100%;
+    height: 1px;
+  }
+
+  &__vr {
+    height: 100%;
+    width: 1px;
+
+    &-angled-left,
+    &-angled-right {
+      height: 200%;
+      width: 1px;
+      top: 50%;
+    }
+
+    &-angled-left {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &-angled-right {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+  }
+
+  &__grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include breakpoint(sm) {
+
+    &__grid {
+      padding: 0;
+      max-width: 540px;
+    }
+
+  }
+
+  @include breakpoint(md) {
+
+    &__grid {
+      max-width: 740px;
+    }
+
+  }
+
+  @include breakpoint(lg) {
+
+    &__grid {
+      max-width: 960px;
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+    &__grid {
+      max-width: 1160px;
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__grid {
+      max-width: 1360px;
+    }
+
+  }
+
+}

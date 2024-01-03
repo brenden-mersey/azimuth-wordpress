@@ -1,0 +1,93 @@
+.hero {
+
+  z-index: 10;
+
+  &__extra {
+    position: relative;
+  }
+
+  &__heading {
+    & + .hero__extra {
+      margin-top: 32px;
+    }
+  }
+
+  &__message {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.47;
+  }
+
+  &__vr {
+    display: none;
+  }
+
+  @include breakpoint(lg) {
+
+    $extra-y-padding: 52px;
+    $extra-x-padding: 8.3333%;
+
+    &__extra {
+      .with-vr & {
+        padding: $extra-y-padding 0 $extra-y-padding $extra-x-padding;
+      }
+    }
+
+    &__heading {
+      width: 83.3333%;
+      & + .hero__extra {
+        margin-top: 72px;
+      }
+    }
+
+    &__message {
+      width: 75%;
+      .with-vr & {
+        padding-left: $extra-x-padding/2;
+      }
+    }
+
+    &__vr {
+      background: rgba(var(--theme-colour-powder), 1);
+      left: 8.3333%;
+      width: 1px;
+      min-height: calc(100% + ($extra-y-padding * 3.5));
+      position: absolute;
+      top: 0px;
+      display: block;
+      &-icon {
+        color: rgba(var(--theme-colour-powder), 1);
+        position: absolute;
+        height: 26px;
+        width: 26px;
+        left: ( 26px * -0.5 );
+        top: 82px;
+        svg {
+          fill: currentColor;
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+    &__message {
+      width: 60%;
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__message {
+      width: 50%;
+    }
+
+  }
+
+}

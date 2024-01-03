@@ -1,0 +1,21 @@
+//////////////////////////////////////////////////////////
+////  Fonts | Variables
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Fonts | Styles
+//////////////////////////////////////////////////////////
+
+@font-face {
+  font-family: 'SaaSeriesBD';
+  src: url('<?php echo $assets_dir; ?>/fonts/SaaSeriesBD.eot');
+  src: local('SaaSeriesBD'),
+     url('<?php echo $assets_dir; ?>/fonts/SaaSeriesBD.eot?#iefix') format('embedded-opentype'),
+      url('<?php echo $assets_dir; ?>/fonts/SaaSeriesBD.woff2') format('woff2'),
+      url('<?php echo $assets_dir; ?>/fonts/SaaSeriesBD.woff') format('woff'),
+      url('<?php echo $assets_dir; ?>/fonts/SaaSeriesBD.ttf') format('truetype'),
+      url('<?php echo $assets_dir; ?>/fonts/SaaSeriesBD.svg#SaaSeriesBD') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

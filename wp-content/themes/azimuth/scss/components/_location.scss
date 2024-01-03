@@ -1,0 +1,60 @@
+//////////////////////////////////////////////////////////
+////  Location | Vars
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Location | Styles
+//////////////////////////////////////////////////////////
+
+.location {
+
+  &__details {
+    line-height: 1.34;
+    p {
+      margin: 0;
+    }
+  }
+
+  &__name {
+    font-family: var(--theme-font-family--sans-serif--primary);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.6;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #88BFDD;
+    & + .location__details {
+      margin-top: 12px;
+    }
+  }
+
+  @include breakpoint(sm) {} // min width sm
+
+  @include breakpoint(md) {} // min width md
+
+  @include breakpoint(lg) {
+
+    &__name {
+      font-size: 12px;
+    }
+
+  } // min width lg
+
+  @include breakpoint(xl) {
+
+    &__name {
+      font-size: 14px;
+    }
+
+  } // min width xl
+
+  @include breakpoint(xxl) {
+
+    &__name {
+      font-size: 16px;
+    }
+
+  } // min width xxl
+
+} // .location

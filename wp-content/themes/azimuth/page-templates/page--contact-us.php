@@ -1,0 +1,20 @@
+<?php
+
+/*
+*
+*	Template Name: Page [ Contact Us ]
+*	Filename: page--contact-us.php
+*
+*/
+
+get_header();
+
+//////////////////////////////////////////////////////////
+////  Theme Vars
+//////////////////////////////////////////////////////////
+
+$THEME = new CustomTheme();
+
+get_footer();
+
+?>

@@ -1,0 +1,56 @@
+//////////////////////////////////////////////////////////
+////  Body | Vars
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Body | Styles
+//////////////////////////////////////////////////////////
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  background: rgba(var(--theme-colour-navy), 1);
+  color: rgba(var(--theme-colour-powder), 1);
+  position: relative;
+
+  &.sticky-footer {
+    display: flex;
+    flex-direction: column;
+    main {
+      flex: 1 0 auto;
+    }
+    footer {
+      flex-shrink: 0;
+    }
+  }
+
+  &.mobile-menu--active {
+    overflow: hidden;
+  }
+
+  @include breakpoint(sm) {} // min width sm
+
+  @include breakpoint(md) {} // min width md
+
+  @include breakpoint(lg) {
+
+    &.mobile-menu--active {
+      overflow: initial;
+    }
+
+  } // min width lg
+
+  @include breakpoint(xl) {} // min width xl
+
+  @include breakpoint(xxl) {} // min width xxl
+
+} // body

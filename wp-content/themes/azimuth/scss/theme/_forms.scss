@@ -1,0 +1,40 @@
+//////////////////////////////////////////////////////////
+////  Form | Variables
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Form | Styles
+//////////////////////////////////////////////////////////
+
+.form {
+
+  position: relative;
+
+  input,
+  textarea {
+    transition: color 280ms, background 280ms, border 280ms, height 280ms, opacity 280ms;
+    background: transparent;
+    width: 100%;
+    display: inline-flex;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+    @include placeholder {
+      color: red;
+    }
+  }
+
+	@include breakpoint(sm) {} // min width sm
+
+	@include breakpoint(md) {} // min width md
+
+	@include breakpoint(lg) {} // min width lg
+
+	@include breakpoint(xl) {} // min width xl
+
+	@include breakpoint(xxl) {} // min width xxl
+
+} // form

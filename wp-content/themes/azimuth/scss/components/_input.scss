@@ -1,0 +1,26 @@
+.input {
+
+  @extend %ui-base;
+  @extend %ui-input;
+  @extend %ui-transition;
+
+  color: rgba(var(--theme-colour-powder),1);
+  font-family: var(--theme-font-family--space-grotesk);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+
+  &--email {
+    @extend .input;
+    border-bottom: 1px solid rgba(var(--theme-colour-powder), 1);
+    @include placeholder {
+      color: rgba(var(--theme-colour-powder), 1);
+    }
+  }
+
+  &[disabled],
+  &.disabled {
+    @extend %ui-disabled;
+  }
+
+}

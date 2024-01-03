@@ -1,0 +1,33 @@
+//////////////////////////////////////////////////////////
+////  Messsage | Vars
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
+////  Messsage | Styles
+//////////////////////////////////////////////////////////
+
+.messsage,
+.rte {
+
+  p, li {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    font-style: inherit;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(sm) {} // min width sm
+
+  @include breakpoint(md) {} // min width md
+
+  @include breakpoint(lg) {} // min width lg
+
+  @include breakpoint(xl) {} // min width xl
+
+  @include breakpoint(xxl) {} // min width xxl
+
+} // .messsage

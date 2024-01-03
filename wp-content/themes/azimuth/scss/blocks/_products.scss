@@ -1,0 +1,107 @@
+.products {
+
+  .glide {
+    max-width: none;
+    .button {
+      background: rgba(var(--theme-colour-navy), 0.2);
+      color: rgba(var(--theme-colour-powder), 1);
+      height: 36px;
+      width: 36px;
+      &__icon {
+        height: 60%;
+        width: auto;
+        svg {
+          display: block;
+          height: 100%;
+          width: auto;
+        }
+      }
+      &:hover {
+        background: rgba(var(--theme-colour-navy), 1);
+      }
+      &.prev {
+        .button__icon {
+          transform: rotate3d(0, 0, 1, 180deg);
+        }
+      }
+    }
+    &__controls {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      padding-right: 30px;
+      margin-top: 20px;
+    }
+  }
+
+  &__aside {
+    padding-right: 30px;
+    width: 100%;
+  }
+
+  &__cta {
+    margin-top: 34px;
+    a {
+      width: 100%;
+    }
+  }
+
+  &__header {
+    & + .products__main {
+      margin-top: 28px;
+    }
+  }
+
+  &__heading {
+    & + .products__message {
+      margin-top: 24px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    gap: 30px;
+    width: calc( 100% + 30px );
+  }
+
+  @include breakpoint(sm) {
+
+    .glide {
+      &__controls {
+        padding-right: 0;
+      }
+    }
+
+    &__aside {
+      padding: 0;
+    }
+
+    &__main {
+      width: 100%;
+    }
+
+  }
+
+  @include breakpoint(lg) {
+
+    &__aside {
+      flex: 1;
+    }
+
+    &__listing {
+      width: 75%;
+    }
+
+    &__main {
+      gap: var(--bs-gutter-width);
+      justify-content: space-between;
+      flex-flow: nowrap;
+      align-items: center;
+    }
+
+  }
+
+}

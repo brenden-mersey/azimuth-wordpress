@@ -1,0 +1,20 @@
+<?php
+
+/*
+*
+*	Template Name: Page [ About Us ]
+*	Filename: page--about-us.php
+*
+*/
+
+get_header();
+
+//////////////////////////////////////////////////////////
+////  Theme Vars
+//////////////////////////////////////////////////////////
+
+$THEME = new CustomTheme();
+
+get_footer();
+
+?>
